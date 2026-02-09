@@ -423,15 +423,28 @@ a:hover { opacity: 0.85; }
 }
 .memory-ticker-track {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     width: max-content;
-    animation: memory-ticker-scroll 45s linear infinite;
+    animation: memory-ticker-scroll 50s linear infinite;
 }
-.memory-ticker-track span {
+.memory-ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-size: 15px;
     font-weight: 600;
     color: var(--text-2);
     white-space: nowrap;
+}
+.memory-ticker-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+.memory-ticker-icon svg {
+    display: block;
 }
 @keyframes memory-ticker-scroll {
     0% { transform: translateX(0); }
