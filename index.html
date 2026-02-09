@@ -68,6 +68,58 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Time Capsule: Memory Vault",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "ratingCount": "6",
+            "reviewCount": "6"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Sarah M."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "I made a capsule for my best friend's birthday with photos from the past year. When she opened it, she cried. This app is something special."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Jake T."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Our teacher had us make capsules at the start of senior year. Opening them at graduation was the highlight of the whole week. Highly recommend."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Emily R."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "I love that everything stays on my phone. No accounts, no cloud, no tracking. Just my memories, locked and waiting. The design is beautiful too."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "David & Maria L."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "Used it for our wedding — guests recorded voice messages and wrote notes. We sealed it and will open it on our first anniversary. Can't wait."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Chris N."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "My team made a capsule on launch day. Photos, Slack messages, everyone's predictions. Opening it a year later was the best team-building moment."
+            },
+            {
+                "@type": "Review",
+                "author": {"@type": "Person", "name": "Anna K."},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "reviewBody": "I write letters to my future self every few months. It's like journaling but way more powerful because you can't peek. The hold-to-lock feature is genius."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
             {"@type":"Question","name":"Is Time Capsule free to download?","acceptedAnswer":{"@type":"Answer","text":"Yes, Time Capsule is free to download with optional in-app purchases to unlock premium features. The core experience — creating, sealing, and opening time capsules — is available to everyone."}},
@@ -418,6 +470,51 @@
     </div>
 </section>
 
+<!-- Reviews -->
+<section class="section section-centered" aria-labelledby="reviews-heading">
+    <h2 class="section-title" id="reviews-heading">What people are saying</h2>
+    <p class="section-sub">Real experiences from Time Capsule users.</p>
+
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"I made a capsule for my best friend's birthday with photos from the past year. When she opened it, she cried. This app is something special."</p>
+            <div class="review-author">Sarah M.</div>
+            <div class="review-role">College Student</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Our teacher had us make capsules at the start of senior year. Opening them at graduation was the highlight of the whole week. Highly recommend."</p>
+            <div class="review-author">Jake T.</div>
+            <div class="review-role">High School Senior</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"I love that everything stays on my phone. No accounts, no cloud, no tracking. Just my memories, locked and waiting. The design is beautiful too."</p>
+            <div class="review-author">Emily R.</div>
+            <div class="review-role">Privacy Advocate</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"Used it for our wedding — guests recorded voice messages and wrote notes. We sealed it and will open it on our first anniversary. Can't wait."</p>
+            <div class="review-author">David &amp; Maria L.</div>
+            <div class="review-role">Newlyweds</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"My team made a capsule on launch day. Photos, Slack messages, everyone's predictions. Opening it a year later was the best team-building moment."</p>
+            <div class="review-author">Chris N.</div>
+            <div class="review-role">Startup Founder</div>
+        </div>
+        <div class="review-card">
+            <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">"I write letters to my future self every few months. It's like journaling but way more powerful because you can't peek. The hold-to-lock feature is genius."</p>
+            <div class="review-author">Anna K.</div>
+            <div class="review-role">Daily Journaler</div>
+        </div>
+    </div>
+</section>
+
 <!-- FAQ -->
 <section class="section" aria-labelledby="faq-heading">
     <h2 class="section-title" id="faq-heading">Frequently asked questions</h2>
@@ -448,6 +545,16 @@
             <h3>5 Ways to Use a Time Capsule With Your Group</h3>
             <p>From friend group trips to wedding capsules — creative ideas for making memories together.</p>
         </a>
+        <a href="blog-best-time-capsule-ideas.html" class="feature-card" style="text-decoration:none;color:inherit;">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h3>10 Best Time Capsule Ideas for 2026</h3>
+            <p>From birthdays to graduations to everyday moments — creative ideas you can make right now.</p>
+        </a>
+        <a href="blog-why-encrypted-time-capsules.html" class="feature-card" style="text-decoration:none;color:inherit;">
+            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Why Your Memories Deserve Encryption</h3>
+            <p>How Time Capsule uses AES-256 encryption to keep your photos, videos, and voice memos private.</p>
+        </a>
     </div>
 </section>
 
@@ -476,6 +583,7 @@
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="about.html#support">Support</a></li>
             <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
         </ul>
     </div>
