@@ -361,7 +361,18 @@ a:hover { opacity: 0.85; }
     max-width: var(--max-w);
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+.phone-section-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-2);
+    margin-bottom: 16px;
 }
 
 .phone-wrapper {
@@ -796,6 +807,40 @@ a:hover { opacity: 0.85; }
     .steps-row { grid-template-columns: 1fr; gap: 24px; }
 }
 
+/* Use case list (no boxes) */
+.use-case-list {
+    list-style: none;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.use-case-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--divider);
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.6;
+}
+.use-case-list li:last-child { border-bottom: none; }
+.use-case-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-subtle);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+.use-case-list strong { color: var(--text-1); }
+
 /* ============================================================
    THEMES SHOWCASE
    ============================================================ */
@@ -1048,6 +1093,142 @@ a:hover { opacity: 0.85; }
 /* ============================================================
    ABOUT PAGE
    ============================================================ */
+.about-why-section .section-sub { margin-bottom: 16px; }
+.about-why-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    align-items: start;
+    margin-top: 24px;
+}
+.about-why-text { min-width: 0; }
+.about-why-phones { position: relative; }
+.about-phone-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 100px;
+}
+.about-phone-frame {
+    width: 120px;
+    height: 200px;
+    background: var(--surface-1);
+    border: 2px solid var(--divider);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.about-phone-frame img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+.about-phone-offset { transform: translateX(24px); }
+.about-phone-offset-2 { transform: translateX(-16px); }
+@media (max-width: 900px) {
+    .about-why-grid { grid-template-columns: 1fr; }
+    .about-why-phones { order: -1; }
+    .about-phone-stack {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: static;
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+    .about-phone-offset { transform: translateY(12px); }
+    .about-phone-offset-2 { transform: translateY(-8px); }
+}
+
+.founder-section-wrap { text-align: center; }
+.founder-section-centered { margin: 0 auto; }
+
+/* Article-style cards (More from Austin) */
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 680px;
+    margin: 0 auto;
+}
+.article-card {
+    position: relative;
+    padding: 28px 28px 28px 36px;
+    border-bottom: 1px solid var(--divider);
+    text-align: left;
+}
+.article-card:last-child { border-bottom: none; }
+.article-card-accent {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    bottom: 28px;
+    width: 4px;
+    background: var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+.article-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-1);
+}
+.article-card-excerpt {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+.article-card-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.article-card-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Values list (strip style) */
+.values-list {
+    list-style: none;
+    max-width: 560px;
+    margin: 32px auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--divider);
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.65;
+}
+.values-list li:last-child { border-bottom: none; }
+.values-list-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: var(--accent-subtle);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+.values-list strong { color: var(--text-1); }
+
 .about-hero {
     padding: 140px 24px 60px;
     text-align: center;
