@@ -1,64 +1,113 @@
 /* ============================================================
    Time Capsule: Memory Vault — Website JavaScript
    - Dark/light theme toggle
-   - Mobile nav
+   - Mobile nav with hamburger morph
    - FAQ accordion
    - Interactive phone demo
+   - Stats counter animation
+   - Smooth section navigation
    ============================================================ */
 
 (function () {
     'use strict';
 
-    /* ---------- Theme toggle ---------- */
+    /* ---------- Prevent page flash ---------- */
     var html = document.documentElement;
-    var themeBtn = document.getElementById('themeToggle');
     var stored = localStorage.getItem('tc-theme');
-
-    // Respect system preference, then stored preference
     if (stored) {
         html.setAttribute('data-theme', stored);
     } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
         html.setAttribute('data-theme', 'light');
     }
+    // Ensure data-theme is always set
+    if (!html.getAttribute('data-theme')) {
+        html.setAttribute('data-theme', 'dark');
+    }
+
+    /* ---------- Theme toggle ---------- */
+    var themeBtns = document.querySelectorAll('.theme-toggle');
 
     var sunSVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
     var moonSVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
 
-    function updateToggleIcon() {
-        if (!themeBtn) return;
-        themeBtn.innerHTML = html.getAttribute('data-theme') === 'light' ? sunSVG : moonSVG;
+    function updateToggleIcons() {
+        var icon = html.getAttribute('data-theme') === 'light' ? sunSVG : moonSVG;
+        themeBtns.forEach(function (btn) { btn.innerHTML = icon; });
     }
-    updateToggleIcon();
+    updateToggleIcons();
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', function () {
+    themeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
             var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', next);
             localStorage.setItem('tc-theme', next);
-            updateToggleIcon();
+            updateToggleIcons();
         });
-    }
+    });
 
-    /* ---------- Mobile nav (full-screen overlay) ---------- */
+    /* ---------- Mobile nav (full-screen overlay with morph) ---------- */
     var navToggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', function () {
-            var isOpen = navLinks.classList.toggle('open');
-            navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
-            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            var isOpen = navLinks.classList.contains('open');
+            if (isOpen) {
+                // Close
+                navLinks.style.opacity = '0';
+                navLinks.style.transform = 'translateY(-8px)';
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-label', 'Open menu');
+                document.body.style.overflow = '';
+                setTimeout(function () {
+                    if (!navLinks.classList.contains('open')) {
+                        navLinks.classList.remove('open');
+                        navLinks.style.display = '';
+                    }
+                }, 300);
+                navLinks.classList.remove('open');
+            } else {
+                // Open
+                navLinks.style.display = 'flex';
+                navLinks.style.opacity = '0';
+                navLinks.style.transform = 'translateY(-8px)';
+                // Force reflow
+                navLinks.offsetHeight;
+                navLinks.classList.add('open');
+                navLinks.style.opacity = '1';
+                navLinks.style.transform = 'translateY(0)';
+                navToggle.classList.add('open');
+                navToggle.setAttribute('aria-label', 'Close menu');
+                document.body.style.overflow = 'hidden';
+            }
         });
         function closeNav() {
-            navLinks.classList.remove('open');
-            navToggle.innerHTML = '&#9776;';
+            navLinks.style.opacity = '0';
+            navLinks.style.transform = 'translateY(-8px)';
+            navToggle.classList.remove('open');
             navToggle.setAttribute('aria-label', 'Open menu');
             document.body.style.overflow = '';
+            setTimeout(function () {
+                navLinks.classList.remove('open');
+                navLinks.style.display = '';
+            }, 300);
         }
         navLinks.querySelectorAll('a').forEach(function (a) {
             a.addEventListener('click', closeNav);
         });
     }
+
+    /* ---------- Smooth instant scroll for section links ---------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            var target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 60;
+                var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            }
+        });
+    });
 
     /* ---------- FAQ accordion (multiple open) ---------- */
     document.querySelectorAll('.faq-question').forEach(function (btn) {
@@ -74,6 +123,113 @@
             }
         });
     });
+
+    /* ---------- Stats counter animation ---------- */
+    var statsAnimated = false;
+    var statsSection = document.querySelector('.stats-row');
+    if (statsSection) {
+        function animateStats() {
+            if (statsAnimated) return;
+            var rect = statsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8 && rect.bottom > 0) {
+                statsAnimated = true;
+                // Animate each stat item
+                var statItems = statsSection.querySelectorAll('.stat-item');
+                statItems.forEach(function (item) {
+                    var valueEl = item.querySelector('.stat-value');
+                    var labelEl = item.querySelector('.stat-label');
+                    if (!valueEl || !labelEl) return;
+                    var label = labelEl.textContent.toLowerCase();
+
+                    if (label.indexOf('on-device') !== -1) {
+                        // 0% -> 100%
+                        animateNumber(valueEl, 0, 100, '%', 1500);
+                    } else if (label.indexOf('encryption') !== -1) {
+                        // Matrix scramble to AES-256
+                        animateMatrix(valueEl, 'AES-256', 1800);
+                    } else if (label.indexOf('server') !== -1 || label.indexOf('data') !== -1) {
+                        // Highlight 0
+                        animateHighlightZero(valueEl, 1200);
+                    } else if (label.indexOf('theme') !== -1) {
+                        // 0 -> 6
+                        animateNumber(valueEl, 0, 6, '', 1200);
+                    }
+                });
+            }
+        }
+
+        function animateNumber(el, from, to, suffix, duration) {
+            var start = null;
+            el.textContent = from + suffix;
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                var progress = Math.min((timestamp - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                var current = Math.round(from + (to - from) * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        function animateMatrix(el, finalText, duration) {
+            var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-';
+            var len = finalText.length;
+            var start = null;
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                var progress = Math.min((timestamp - start) / duration, 1);
+                var result = '';
+                for (var i = 0; i < len; i++) {
+                    var charProgress = Math.min(progress * len / (i + 1), 1);
+                    if (charProgress >= 1 || progress > (i + 1) / len * 0.7) {
+                        result += finalText[i];
+                    } else {
+                        result += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                }
+                el.textContent = result;
+                if (progress < 1) requestAnimationFrame(step);
+                else el.textContent = finalText;
+            }
+            requestAnimationFrame(step);
+        }
+
+        function animateHighlightZero(el, duration) {
+            el.style.opacity = '0.3';
+            el.textContent = '0';
+            var start = null;
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                var progress = Math.min((timestamp - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.style.opacity = 0.3 + 0.7 * eased;
+                el.style.transform = 'scale(' + (0.8 + 0.2 * eased) + ')';
+                if (progress < 1) requestAnimationFrame(step);
+                else {
+                    el.style.opacity = '1';
+                    el.style.transform = 'scale(1)';
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        window.addEventListener('scroll', animateStats);
+        animateStats(); // Check on load
+    }
+
+    /* ---------- Press form handling ---------- */
+    var pressForm = document.getElementById('pressForm');
+    if (pressForm) {
+        pressForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var email = pressForm.querySelector('[name="email"]').value;
+            var subject = pressForm.querySelector('[name="subject"]').value;
+            var message = pressForm.querySelector('[name="message"]').value;
+            var mailtoLink = 'mailto:austinhfrankel@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('From: ' + email + '\n\n' + message);
+            window.location.href = mailtoLink;
+        });
+    }
 
     /* ---------- Interactive phone demo ---------- */
     var phoneScreen = document.getElementById('phoneScreen');

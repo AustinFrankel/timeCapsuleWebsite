@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://austinfrankel.github.io/timeCapsuleWebsite/about.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="About Austin Frankel & Time Capsule: Memory Vault">
-    <meta property="og:description" content="Created by Austin Frankel,student entrepreneur, iOS developer, and founder of Study Share & Seat Maker.">
+    <meta property="og:description" content="Created by Austin Frankel, student entrepreneur, iOS developer, and founder of Study Share & Seat Maker.">
     <meta property="og:url" content="https://austinfrankel.github.io/timeCapsuleWebsite/about.html">
     <meta property="og:image" content="https://austinfrankel.github.io/timeCapsuleWebsite/app-icon.png">
     <meta property="og:image:width" content="512">
@@ -18,12 +18,15 @@
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="About Austin Frankel & Time Capsule: Memory Vault">
-    <meta name="twitter:description" content="Created by Austin Frankel,student entrepreneur, iOS developer, and founder of Study Share & Seat Maker.">
+    <meta name="twitter:description" content="Created by Austin Frankel, student entrepreneur, iOS developer, and founder of Study Share & Seat Maker.">
     <link rel="icon" type="image/png" href="app-icon.png">
     <link rel="apple-touch-icon" href="app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){var s=localStorage.getItem('tc-theme');if(s){document.documentElement.setAttribute('data-theme',s)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}else{document.documentElement.setAttribute('data-theme','dark')}})();
+    </script>
 
     <script type="application/ld+json">
     {
@@ -76,15 +79,18 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo"><img src="app-icon.png" alt="Time Capsule" width="34" height="34" loading="eager"> Time Capsule</a>
-        <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle">&#9776;</button>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <button class="theme-toggle nav-theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark/light mode"></button>
+            <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" aria-current="page">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy-policy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"></button></li>
-            <li><a href="#download" class="nav-cta-link">Download</a></li>
+            <li><a href="index.html#download" class="nav-cta-link">Download</a></li>
         </ul>
     </div>
 </nav>
@@ -97,20 +103,11 @@
 
     <section class="section about-why-section">
         <h2 class="section-title">Why Time Capsule?</h2>
-        <div class="about-why-grid">
-            <div class="about-why-text">
-                <p class="section-sub" style="max-width:100%;">We take hundreds of photos, record countless moments, and write things we quickly forget. Most of these memories get buried in camera rolls, never to be seen again. We scroll past them without stopping. The moments that once meant everything become background noise in an infinite feed.</p>
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Time Capsule changes that. Instead of letting memories fade into an endless scroll, you seal them with intention. You pick photos from a birthday dinner, record a voice memo to your future self, write a note about how you're feeling right now. You choose a date, maybe a month from now, maybe ten years. Then you lock it all away.</p>
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">When the time comes, you rediscover everything inside with the excitement of opening a real time capsule. You'll hear your own voice from years ago. You'll see photos you forgot you took. You'll read words that hit differently with distance.</p>
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;">No social media. No sharing. No cloud. Just you and your memories, preserved exactly as you left them.</p>
-            </div>
-            <div class="about-why-phones" aria-hidden="true">
-                <div class="about-phone-stack">
-                    <div class="about-phone-frame"><img src="app-icon.png" alt="" width="56" height="56" loading="lazy"></div>
-                    <div class="about-phone-frame about-phone-offset"><img src="app-icon.png" alt="" width="56" height="56" loading="lazy"></div>
-                    <div class="about-phone-frame about-phone-offset-2"><img src="app-icon.png" alt="" width="56" height="56" loading="lazy"></div>
-                </div>
-            </div>
+        <div style="max-width:720px;">
+            <p class="section-sub" style="max-width:100%;">We take hundreds of photos, record countless moments, and write things we quickly forget. Most of these memories get buried in camera rolls, never to be seen again. We scroll past them without stopping. The moments that once meant everything become background noise in an infinite feed.</p>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Time Capsule changes that. Instead of letting memories fade into an endless scroll, you seal them with intention. You pick photos from a birthday dinner, record a voice memo to your future self, write a note about how you're feeling right now. You choose a date, maybe a month from now, maybe ten years. Then you lock it all away.</p>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">When the time comes, you rediscover everything inside with the excitement of opening a real time capsule. You'll hear your own voice from years ago. You'll see photos you forgot you took. You'll read words that hit differently with distance.</p>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;">No social media. No sharing. No cloud. Just you and your memories, preserved exactly as you left them.</p>
         </div>
     </section>
 
@@ -124,15 +121,15 @@
                 <h3 style="font-size:24px;font-weight:800;margin-bottom:12px;">Austin Frankel</h3>
                 <p style="font-size:13px;color:var(--accent);font-weight:600;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.05em;">Founder &amp; iOS Developer</p>
 
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Austin Frankel is a student entrepreneur and iOS developer based in New York. He designs and builds apps that solve real problems,from preserving memories to helping students study smarter to organizing classrooms.</p>
+                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Austin Frankel is a student entrepreneur and iOS developer based in New York. He designs and builds apps that solve real problems, from preserving memories to helping students study smarter to organizing classrooms.</p>
 
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Austin built Time Capsule: Memory Vault because he wanted to create something personal in a world full of apps designed to keep you scrolling. Every screen, animation, and interaction was designed and coded by him,from the AES-256 encryption layer to the six hand-crafted themes.</p>
+                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Austin built Time Capsule: Memory Vault because he wanted to create something personal in a world full of apps designed to keep you scrolling. Every screen, animation, and interaction was designed and coded by him, from the AES-256 encryption layer to the six hand-crafted themes.</p>
 
                 <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">Beyond Time Capsule, Austin is the founder of <strong style="color:var(--text-1);">Study Share</strong>, an AI-driven platform that helps students study and predict the SAT and ACT exams, and <strong style="color:var(--text-1);">Seat Maker</strong>, a drag-and-drop seating chart app that reached #4 on Apple's U.S. Paid Lifestyle charts within 24 hours of launch, with over 10,000 installs and 150,000 impressions.</p>
 
                 <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:16px;">He also founded <strong style="color:var(--text-1);">CodeLab</strong>, a coding education program where he taught 72 students to build 95 mobile apps, and co-founded <strong style="color:var(--text-1);">Homework Helpers</strong>, a peer-to-peer tutoring program that now serves 35% of his school district's students.</p>
 
-                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:24px;">Austin is passionate about entrepreneurship, product design, and building things that make a real difference. He manages every part of the product lifecycle,from UI design and Swift development to App Store Optimization and user acquisition.</p>
+                <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:24px;">Austin is passionate about entrepreneurship, product design, and building things that make a real difference. He manages every part of the product lifecycle, from UI design and Swift development to App Store Optimization and user acquisition.</p>
 
                 <div class="founder-links">
                     <a href="https://www.linkedin.com/in/austin-frankel/" target="_blank" rel="noopener" class="founder-link">
@@ -152,34 +149,38 @@
         </div>
     </section>
 
-    <!-- Other Apps by Austin Frankel (article-style) -->
+    <!-- More from Austin Frankel (Timeline) -->
     <section class="section section-centered" id="apps" aria-labelledby="apps-heading">
         <h2 class="section-title" id="apps-heading">More from Austin Frankel</h2>
-        <p class="section-sub">Austin builds apps and programs that make a real difference.</p>
+        <p class="section-sub">A timeline of projects and programs that make a real difference.</p>
 
-        <div class="article-list">
-            <article class="article-card">
-                <div class="article-card-accent"></div>
-                <h3 class="article-card-title">Study Share</h3>
-                <p class="article-card-excerpt">An AI-driven platform that helps students study and predict the SAT and ACT exams. Austin oversees product design, development, and team operations from concept to launch, turning complex data into a simple, engaging study experience.</p>
-                <a href="https://www.studyshare.app/" target="_blank" rel="noopener" class="article-card-link">Visit Study Share &rarr;</a>
-            </article>
-            <article class="article-card">
-                <div class="article-card-accent"></div>
-                <h3 class="article-card-title">Seat Maker</h3>
-                <p class="article-card-excerpt">A drag-and-drop seating chart app built entirely in Swift. Reached #4 in Apple's U.S. Paid Lifestyle charts within 24 hours, hitting over 10,000 installs and 150,000 impressions. Austin manages every part, from UI design to App Store Optimization.</p>
-                <a href="https://apps.apple.com/us/app/seat-maker/id6748284141" target="_blank" rel="noopener" class="article-card-link">View on App Store &rarr;</a>
-            </article>
-            <article class="article-card">
-                <div class="article-card-accent"></div>
-                <h3 class="article-card-title">CodeLab</h3>
-                <p class="article-card-excerpt">A coding education program Austin founded to make programming enjoyable and affordable. He taught 72 students aged 9+ to build 95 mobile apps using MIT App Inventor at weekly sessions at the Greenwich Civic Center.</p>
-            </article>
-            <article class="article-card">
-                <div class="article-card-accent"></div>
-                <h3 class="article-card-title">Homework Helpers</h3>
-                <p class="article-card-excerpt">A PTA-sponsored peer-to-peer tutoring program that Austin co-founded and serves as Vice President. The program now provides academic support to 35% of the school district's students.</p>
-            </article>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-role">2024 &ndash; Present</div>
+                <div class="timeline-item-title">Study Share</div>
+                <div class="timeline-item-desc">An AI-driven platform that helps students study and predict the SAT and ACT exams. Austin oversees product design, development, and team operations from concept to launch, turning complex data into a simple, engaging study experience.</div>
+                <a href="https://www.studyshare.app/" target="_blank" rel="noopener" class="timeline-item-link">Visit Study Share &rarr;</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-role">2024</div>
+                <div class="timeline-item-title">Seat Maker</div>
+                <div class="timeline-item-desc">A drag-and-drop seating chart app built entirely in Swift. Reached #4 in Apple's U.S. Paid Lifestyle charts within 24 hours, hitting over 10,000 installs and 150,000 impressions. Austin manages every part, from UI design to App Store Optimization.</div>
+                <a href="https://apps.apple.com/us/app/seat-maker/id6748284141" target="_blank" rel="noopener" class="timeline-item-link">View on App Store &rarr;</a>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-role">2023</div>
+                <div class="timeline-item-title">CodeLab</div>
+                <div class="timeline-item-desc">A coding education program Austin founded to make programming enjoyable and affordable. He taught 72 students aged 9+ to build 95 mobile apps using MIT App Inventor at weekly sessions at the Greenwich Civic Center.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-role">2022 &ndash; Present</div>
+                <div class="timeline-item-title">Homework Helpers</div>
+                <div class="timeline-item-desc">A PTA-sponsored peer-to-peer tutoring program that Austin co-founded and serves as Vice President. The program now provides academic support to 35% of the school district's students.</div>
+            </div>
         </div>
     </section>
 
@@ -216,24 +217,27 @@
         </ul>
     </section>
 
-    <!-- Values (strip style, not boxes) -->
+    <!-- Values (three horizontal boxes) -->
     <section class="section section-centered">
         <h2 class="section-title">What we believe in</h2>
 
-        <ul class="values-list">
-            <li>
-                <span class="values-list-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                <div><strong>Privacy First</strong> — No analytics. No tracking. No accounts. No servers. We literally cannot see your data; it never leaves your device.</div>
-            </li>
-            <li>
-                <span class="values-list-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-                <div><strong>Intentional Design</strong> — Every screen, animation, and interaction was designed to make the experience feel personal and meaningful, not addictive.</div>
-            </li>
-            <li>
-                <span class="values-list-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-                <div><strong>Simplicity</strong> — Add your memories, set a date, lock it. That's it. The best apps stay out of your way.</div>
-            </li>
-        </ul>
+        <div class="values-grid-horizontal">
+            <div class="value-box">
+                <div class="value-box-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h3>Privacy First</h3>
+                <p>No analytics. No tracking. No accounts. No servers. We literally cannot see your data; it never leaves your device.</p>
+            </div>
+            <div class="value-box">
+                <div class="value-box-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                <h3>Intentional Design</h3>
+                <p>Every screen, animation, and interaction was designed to make the experience feel personal and meaningful, not addictive.</p>
+            </div>
+            <div class="value-box">
+                <div class="value-box-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                <h3>Simplicity</h3>
+                <p>Add your memories, set a date, lock it. That's it. The best apps stay out of your way.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Support -->
@@ -244,38 +248,10 @@
         <div class="support-box">
             <div class="support-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;">Get in touch</h3>
-            <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:20px;max-width:480px;">Whether you have a feature request, found a bug, or just want to say hello,reach out anytime. We respond to every email.</p>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:20px;max-width:480px;">Whether you have a feature request, found a bug, or just want to say hello, reach out anytime. We respond to every email.</p>
             <a href="mailto:austinhfrankel@gmail.com" class="btn btn-accent">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 austinhfrankel@gmail.com
-            </a>
-        </div>
-    </section>
-
-    <!-- Articles -->
-    <section class="section section-centered" aria-labelledby="articles-heading">
-        <h2 class="section-title" id="articles-heading">Read more</h2>
-        <p class="section-sub">Ideas and inspiration for preserving your memories.</p>
-        <div class="features-grid" style="grid-template-columns:repeat(2,1fr);">
-            <a href="blog-letter-to-future-self.html" class="feature-card" style="text-decoration:none;color:inherit;">
-                <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                <h3>How to Write a Letter to Your Future Self</h3>
-                <p>Lock a message away and rediscover it months or years later. Here's how to make it meaningful.</p>
-            </a>
-            <a href="blog-group-time-capsule.html" class="feature-card" style="text-decoration:none;color:inherit;">
-                <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-                <h3>5 Ways to Use a Time Capsule With Your Group</h3>
-                <p>From friend group trips to wedding capsules,creative ideas for making memories together.</p>
-            </a>
-            <a href="blog-best-time-capsule-ideas.html" class="feature-card" style="text-decoration:none;color:inherit;">
-                <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                <h3>10 Best Time Capsule Ideas for 2026</h3>
-                <p>From birthdays to graduations to everyday moments,creative ideas you can make right now.</p>
-            </a>
-            <a href="blog-why-encrypted-time-capsules.html" class="feature-card" style="text-decoration:none;color:inherit;">
-                <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                <h3>Why Your Memories Deserve Encryption</h3>
-                <p>How Time Capsule uses AES-256 encryption to keep your photos, videos, and voice memos private.</p>
             </a>
         </div>
     </section>
@@ -302,10 +278,11 @@
         <ul class="footer-links">
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="press.html">Press</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Use</a></li>
-            <li><a href="about.html#support">Support</a></li>
-            <li><a href="about.html#articles-heading">Articles</a></li>
+            <li><a href="#support">Support</a></li>
             <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
         </ul>
     </div>

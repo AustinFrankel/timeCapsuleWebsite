@@ -35,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){var s=localStorage.getItem('tc-theme');if(s){document.documentElement.setAttribute('data-theme',s)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}else{document.documentElement.setAttribute('data-theme','dark')}})();
+    </script>
 
     <script type="application/ld+json">
     {
@@ -140,13 +143,16 @@
             <img src="app-icon.png" alt="Time Capsule app icon" width="34" height="34" loading="eager">
             Time Capsule
         </a>
-        <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle">&#9776;</button>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <button class="theme-toggle nav-theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark/light mode"></button>
+            <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" aria-current="page">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy-policy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"></button></li>
             <li><a href="#download" class="nav-cta-link">Download</a></li>
         </ul>
@@ -392,6 +398,30 @@
     </div>
 </section>
 
+<!-- How It Works (moved above Use Cases) -->
+<section class="section section-centered" aria-labelledby="how-heading">
+    <h2 class="section-title" id="how-heading">Three simple steps</h2>
+    <p class="section-sub">Creating a time capsule takes less than a minute.</p>
+
+    <div class="steps-row">
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <h3>Add Memories</h3>
+            <p>Capture photos, record voice memos, write notes, or add files.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <h3>Set a Date</h3>
+            <p>Choose when your capsule should open, tomorrow, next month, or years from now.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <h3>Seal &amp; Wait</h3>
+            <p>Hold to lock your capsule. When the time comes, rediscover everything inside.</p>
+        </div>
+    </div>
+</section>
+
 <!-- Use Cases (list style, not boxes) -->
 <section class="section section-centered" aria-labelledby="usecases-heading">
     <h2 class="section-title" id="usecases-heading">Made for every kind of memory</h2>
@@ -423,30 +453,6 @@
             <div><strong>Personal Journaling</strong> — Write letters to your future self. Record how you feel today and rediscover your growth months or years later.</div>
         </li>
     </ul>
-</section>
-
-<!-- How It Works -->
-<section class="section section-centered" aria-labelledby="how-heading">
-    <h2 class="section-title" id="how-heading">Three simple steps</h2>
-    <p class="section-sub">Creating a time capsule takes less than a minute.</p>
-
-    <div class="steps-row">
-        <div class="step-item">
-            <div class="step-num">1</div>
-            <h3>Add Memories</h3>
-            <p>Capture photos, record voice memos, write notes, or add files.</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">2</div>
-            <h3>Set a Date</h3>
-            <p>Choose when your capsule should open,tomorrow, next month, or years from now.</p>
-        </div>
-        <div class="step-item">
-            <div class="step-num">3</div>
-            <h3>Seal &amp; Wait</h3>
-            <p>Hold to lock your capsule. When the time comes, rediscover everything inside.</p>
-        </div>
-    </div>
 </section>
 
 <!-- Stats -->
@@ -539,25 +545,29 @@
     <h2 class="section-title" id="blog-heading">Read more</h2>
     <p class="section-sub">Ideas and inspiration for preserving your memories.</p>
     <div class="features-grid" style="grid-template-columns:repeat(2,1fr);">
-        <a href="blog-letter-to-future-self.html" class="feature-card" style="text-decoration:none;color:inherit;">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <a href="blog-letter-to-future-self.html" class="blog-card">
+            <span class="blog-card-read-time">4 min</span>
             <h3>How to Write a Letter to Your Future Self</h3>
             <p>Lock a message away and rediscover it months or years later. Here's how to make it meaningful.</p>
+            <span class="blog-card-cta">Read article &rarr;</span>
         </a>
-        <a href="blog-group-time-capsule.html" class="feature-card" style="text-decoration:none;color:inherit;">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <a href="blog-group-time-capsule.html" class="blog-card">
+            <span class="blog-card-read-time">5 min</span>
             <h3>5 Ways to Use a Time Capsule With Your Group</h3>
-            <p>From friend group trips to wedding capsules,creative ideas for making memories together.</p>
+            <p>From friend group trips to wedding capsules, creative ideas for making memories together.</p>
+            <span class="blog-card-cta">Read article &rarr;</span>
         </a>
-        <a href="blog-best-time-capsule-ideas.html" class="feature-card" style="text-decoration:none;color:inherit;">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <a href="blog-best-time-capsule-ideas.html" class="blog-card">
+            <span class="blog-card-read-time">6 min</span>
             <h3>10 Best Time Capsule Ideas for 2026</h3>
-            <p>From birthdays to graduations to everyday moments,creative ideas you can make right now.</p>
+            <p>From birthdays to graduations to everyday moments, creative ideas you can make right now.</p>
+            <span class="blog-card-cta">Read article &rarr;</span>
         </a>
-        <a href="blog-why-encrypted-time-capsules.html" class="feature-card" style="text-decoration:none;color:inherit;">
-            <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <a href="blog-why-encrypted-time-capsules.html" class="blog-card">
+            <span class="blog-card-read-time">4 min</span>
             <h3>Why Your Memories Deserve Encryption</h3>
             <p>How Time Capsule uses AES-256 encryption to keep your photos, videos, and voice memos private.</p>
+            <span class="blog-card-cta">Read article &rarr;</span>
         </a>
     </div>
 </section>
@@ -585,10 +595,11 @@
         <ul class="footer-links">
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="press.html">Press</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Use</a></li>
             <li><a href="about.html#support">Support</a></li>
-            <li><a href="about.html#articles-heading">Articles</a></li>
             <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
         </ul>
     </div>

@@ -54,4 +54,28 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://austinfrankel.github.io/timeCapsuleWebsite/blog-science-of-nostalgia.html</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://austinfrankel.github.io/timeCapsuleWebsite/blog-time-capsule-for-your-child.html</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://austinfrankel.github.io/timeCapsuleWebsite/blog-goal-setting-with-time-capsules.html</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://austinfrankel.github.io/timeCapsuleWebsite/blog-digital-vs-physical-time-capsules.html</loc>
+        <lastmod>2026-02-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>

@@ -25,6 +25,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function(){var s=localStorage.getItem('tc-theme');if(s){document.documentElement.setAttribute('data-theme',s)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}else{document.documentElement.setAttribute('data-theme','dark')}})();
+    </script>
 
     <script type="application/ld+json">
     {
@@ -53,15 +56,18 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
         <a href="index.html" class="nav-logo"><img src="app-icon.png" alt="Time Capsule" width="34" height="34" loading="eager"> Time Capsule</a>
-        <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle">&#9776;</button>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <button class="theme-toggle nav-theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark/light mode"></button>
+            <button class="nav-mobile-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy-policy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"></button></li>
-            <li><a href="#download" class="nav-cta-link">Download</a></li>
+            <li><a href="index.html#download" class="nav-cta-link">Download</a></li>
         </ul>
     </div>
 </nav>
@@ -189,10 +195,11 @@
         <ul class="footer-links">
             <li><a href="about.html">About</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="press.html">Press</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Use</a></li>
             <li><a href="about.html#support">Support</a></li>
-            <li><a href="about.html#articles-heading">Articles</a></li>
             <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
         </ul>
     </div>
