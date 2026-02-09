@@ -96,11 +96,8 @@
         });
 
         currentScreen = index;
-        // Small delay for exit animation
-        setTimeout(function () {
-            screens.forEach(function (s) { s.classList.remove('exit'); });
-            screens[currentScreen].classList.add('active');
-        }, 80);
+        screens.forEach(function (s) { s.classList.remove('exit'); });
+        screens[currentScreen].classList.add('active');
 
         dots.forEach(function (d, i) {
             d.classList.toggle('active', i === currentScreen);
