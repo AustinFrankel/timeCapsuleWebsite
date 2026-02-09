@@ -39,30 +39,36 @@
         });
     }
 
-    /* ---------- Mobile nav ---------- */
+    /* ---------- Mobile nav (full-screen overlay) ---------- */
     var navToggle = document.getElementById('navToggle');
     var navLinks = document.getElementById('navLinks');
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', function () {
-            navLinks.classList.toggle('open');
+            var isOpen = navLinks.classList.toggle('open');
+            navToggle.innerHTML = isOpen ? '&#10005;' : '&#9776;';
+            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
-        // Close on link click
+        function closeNav() {
+            navLinks.classList.remove('open');
+            navToggle.innerHTML = '&#9776;';
+            navToggle.setAttribute('aria-label', 'Open menu');
+            document.body.style.overflow = '';
+        }
         navLinks.querySelectorAll('a').forEach(function (a) {
-            a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+            a.addEventListener('click', closeNav);
         });
     }
 
-    /* ---------- FAQ accordion ---------- */
+    /* ---------- FAQ accordion (multiple open) ---------- */
     document.querySelectorAll('.faq-question').forEach(function (btn) {
         btn.addEventListener('click', function () {
             var item = btn.closest('.faq-item');
             var isOpen = item.classList.contains('open');
-            // Close all
-            document.querySelectorAll('.faq-item.open').forEach(function (el) {
-                el.classList.remove('open');
-                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            });
-            if (!isOpen) {
+            if (isOpen) {
+                item.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            } else {
                 item.classList.add('open');
                 btn.setAttribute('aria-expanded', 'true');
             }
