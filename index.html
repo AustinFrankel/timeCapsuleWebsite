@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Capsule: Memory Vault — Lock Your Memories in Time</title>
+    <meta name="description" content="Capture photos, videos, voice memos and notes. Lock them in an encrypted time capsule. Rediscover your memories when the time is right.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🔒</text></svg>">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🔒</div>
+            Time Capsule
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="privacy-policy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li>
+                <a href="#download" class="nav-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Download
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-badge">Available on iOS 17+</div>
+    <h1>Lock your memories.<br><span>Open them later.</span></h1>
+    <p>Capture photos, videos, voice memos and notes. Seal them in an encrypted time capsule. Rediscover your memories when the time is right.</p>
+    <div class="hero-actions">
+        <a href="#download" class="btn-primary" id="download">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+        </a>
+        <a href="#features" class="btn-secondary">See Features</a>
+    </div>
+
+    <!-- Phone mockup -->
+    <div class="hero-phone">
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-content">
+                <div class="phone-vault-icon">🔒</div>
+                <div class="phone-timer">14d 6h</div>
+                <div class="phone-label">until your capsule opens</div>
+                <div class="phone-progress">
+                    <div class="phone-progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything you need to<br>preserve your memories</h2>
+    <p class="section-subtitle">Time Capsule combines beautiful design with powerful features to create a truly personal experience.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">📸</div>
+            <h3>Photos &amp; Videos</h3>
+            <p>Capture moments with your camera or choose from your library. Every visual memory, safely locked away.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3>Voice Memos</h3>
+            <p>Record your thoughts, a message to your future self, or sounds that matter. Your voice, preserved in time.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">✍️</div>
+            <h3>Text Notes</h3>
+            <p>Write letters, journal entries, or quick thoughts. Words you'll rediscover with fresh eyes.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>AES-256 Encryption</h3>
+            <p>Your capsules are sealed with military-grade encryption. Only you can access your memories.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <h3>Timed Unlocking</h3>
+            <p>Set a date in the future. Watch the countdown. Experience the thrill of opening a time capsule.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>6 Beautiful Themes</h3>
+            <p>Choose from Midnight, Ocean, Sunset, Forest, Lavender, or Rose Gold. Make it yours.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Three simple steps</h2>
+    <p class="section-subtitle">Creating a time capsule takes less than a minute.</p>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Add Your Memories</h3>
+            <p>Capture photos, record voice memos, write notes, or add files. Combine as many as you want.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Set a Date</h3>
+            <p>Choose when your capsule should open. Tomorrow, next month, or years from now.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Seal &amp; Wait</h3>
+            <p>Hold to lock your capsule. Watch the countdown. When the time comes, rediscover your memories.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Themes showcase -->
+<section class="themes">
+    <div class="section-label">Personalize</div>
+    <h2 class="section-title">Six hand-crafted themes</h2>
+    <p class="section-subtitle">Each theme transforms the entire app experience with carefully chosen colors.</p>
+
+    <div class="themes-row">
+        <div class="theme-swatch" style="background: rgba(8,8,16,0.8);">
+            <div class="theme-dot" style="background: #66c7ff;"></div>
+            <span>Midnight</span>
+        </div>
+        <div class="theme-swatch" style="background: rgba(5,20,31,0.8);">
+            <div class="theme-dot" style="background: #33b3e6;"></div>
+            <span>Ocean</span>
+        </div>
+        <div class="theme-swatch" style="background: rgba(20,8,5,0.8);">
+            <div class="theme-dot" style="background: #ff8c33;"></div>
+            <span>Sunset</span>
+        </div>
+        <div class="theme-swatch" style="background: rgba(5,13,8,0.8);">
+            <div class="theme-dot" style="background: #66d980;"></div>
+            <span>Forest</span>
+        </div>
+        <div class="theme-swatch" style="background: rgba(13,8,20,0.8);">
+            <div class="theme-dot" style="background: #b380f2;"></div>
+            <span>Lavender</span>
+        </div>
+        <div class="theme-swatch" style="background: rgba(20,8,13,0.8);">
+            <div class="theme-dot" style="background: #ff99bf;"></div>
+            <span>Rose Gold</span>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-box">
+        <h2>Start preserving your memories today</h2>
+        <p>Free to download. No account required. Everything stays on your device.</p>
+        <a href="#download" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-left">&copy; 2026 Austin Frankel. All rights reserved.</div>
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

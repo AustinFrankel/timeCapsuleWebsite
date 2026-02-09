@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Capsule — About</title>
+    <meta name="description" content="Learn about Time Capsule: Memory Vault and why we built it.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🔒</text></svg>">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🔒</div>
+            Time Capsule
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="privacy-policy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="hero-badge">About Time Capsule</div>
+    <h1>Memories deserve to be<br>rediscovered</h1>
+    <p>Time Capsule is a simple idea: capture what matters today, lock it away, and experience the joy of opening it in the future.</p>
+</section>
+
+<!-- Story -->
+<section class="about-story">
+    <h2>Why Time Capsule?</h2>
+    <p>We take hundreds of photos, record countless moments, and write things we quickly forget. But most of these memories get buried in our camera rolls, never to be seen again.</p>
+    <p>Time Capsule changes that. Instead of letting memories fade into a scroll, you seal them with intention. You choose a date. You lock them away. And when the time comes, you rediscover them with the excitement of opening a real time capsule.</p>
+    <p>No social media. No sharing. No cloud. Just you and your memories, preserved exactly as you left them.</p>
+</section>
+
+<!-- Features deep dive -->
+<section class="features">
+    <div class="section-label">What's Inside</div>
+    <h2 class="section-title">Built with care, down to every detail</h2>
+    <p class="section-subtitle">Every feature was designed to make preserving memories feel effortless and special.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🏗️</div>
+            <h3>100% On-Device</h3>
+            <p>Every photo, video, and note stays on your iPhone. Nothing is uploaded, synced, or shared. Your memories are truly yours.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>Military-Grade Encryption</h3>
+            <p>AES-256 encryption via Apple's CryptoKit protects your exported capsules. The same standard used by governments worldwide.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Real-Time Countdown</h3>
+            <p>Watch the progress ring fill and the timer count down second by second. The anticipation is part of the experience.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>6 Unique Themes</h3>
+            <p>From the deep blues of Midnight to the warm tones of Rose Gold, pick a theme that matches your personality.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📤</div>
+            <h3>Share Capsules</h3>
+            <p>Export encrypted .ltc files and share them with friends or family. They can import and unlock on their own device.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3>Smart Notifications</h3>
+            <p>Get notified the moment your capsule is ready to open. Never miss the big reveal.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="about-values">
+    <div class="section-label">Our Values</div>
+    <h2 class="section-title">What we believe in</h2>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <div class="value-icon">🛡️</div>
+            <h3>Privacy First</h3>
+            <p>No analytics. No tracking. No accounts. No servers. We don't see your data because we literally can't — it never leaves your device.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">✨</div>
+            <h3>Thoughtful Design</h3>
+            <p>Every animation, color, and interaction was crafted to feel delightful. We believe tools should be beautiful.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <h3>Simplicity</h3>
+            <p>No clutter, no complexity. Add your memories, set a date, lock it. That's it. The best apps stay out of your way.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-box">
+        <h2>Ready to lock your first memory?</h2>
+        <p>Download Time Capsule and start preserving moments that matter.</p>
+        <a href="#download" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-left">&copy; 2026 Austin Frankel. All rights reserved.</div>
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mailto:austinhfrankel@gmail.com">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
