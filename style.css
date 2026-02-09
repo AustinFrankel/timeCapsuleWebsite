@@ -442,6 +442,9 @@ a:hover { opacity: 0.85; }
     font-weight: 700;
     cursor: pointer;
     transition: transform 0.15s, opacity 0.15s;
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
 }
 .demo-btn:hover { transform: scale(0.97); }
 .demo-btn:active { transform: scale(0.95); opacity: 0.9; }
@@ -592,6 +595,10 @@ a:hover { opacity: 0.85; }
     background: var(--text-3);
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
+    border: none;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
 }
 .phone-dot.active {
     background: var(--accent);
