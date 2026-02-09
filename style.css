@@ -284,8 +284,6 @@ a:hover { opacity: 0.85; }
     .hero-actions .hero-btn-features {
         display: none !important;
     }
-    /* On mobile, reorder: interactive demo first, features below */
-    .phone-section { order: -1; }
 }
 
 /* ============================================================
@@ -2030,12 +2028,4 @@ html:not([data-theme]) body {
     .blog-listing-grid { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   MOBILE SECTION REORDER
-   ============================================================ */
-@media (max-width: 800px) {
-    main { display: flex; flex-direction: column; }
-    .hero { order: 0; }
-    .phone-section { order: 1; padding-top: 0; }
-    #features { order: 2; }
-}
+/* Demo is first in main (right below hero line) on both desktop and mobile; no reorder needed */
