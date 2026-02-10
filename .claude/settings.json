@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/tmp/profile_update.swift:*)",
+      "Read(//Users/austinfrankelwork/Downloads/**)"
+    ]
+  }
+}
