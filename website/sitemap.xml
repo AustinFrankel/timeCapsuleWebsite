@@ -31,6 +31,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://austinfrankel.github.io/timeCapsuleWebsite/age-suitability.html</loc>
+        <lastmod>2026-02-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>https://austinfrankel.github.io/timeCapsuleWebsite/blog-letter-to-future-self.html</loc>
         <lastmod>2026-02-09</lastmod>
         <changefreq>monthly</changefreq>
