@@ -2070,3 +2070,11 @@ html:not([data-theme]) body {
 }
 
 /* Demo is first in main (right below hero line) on both desktop and mobile; no reorder needed */
+
+/* Google Translate — hide widget, auto-translate to user language */
+#google_translate_element,
+.skiptranslate,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+body > .skiptranslate { display: none !important; }
+body { top: 0 !important; }
